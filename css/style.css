@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700&display=swap');
+
 :root {
   --Dark-Blue: #03073C;
   --Blue: #121761;
@@ -5,7 +7,7 @@
   --Grey: #475658;
   --Red: #D44B4B;
 
-  --fontFamily: 'Lato';
+  --fontFamily: 'Open Sans';
   --fontSize: 1.6rem;
   --fontColor: ;
 
@@ -115,13 +117,14 @@ h6 {
 
 [class*="__container"] {
   max-width: var(--containerWidth);
+  width: 100%;
   margin: 0 auto;
   padding-inline: 1.5rem;
 }
 
 .title {
   color: var(--Dark-Blue);
-  font-size: 4.5rem;
+  font-size: 4.2rem;
 }
 
 h1,
@@ -139,14 +142,15 @@ h2 {
 
 h3 {
   line-height: 5.2rem;
+  font-size: 4rem;
 }
 
-/* .description {
-  color: ;
-  font-size: ;
-  font-weight: ;
-  line-height: 3rem;
-} */
+.btn {
+  display: inline-block;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: normal;
+}
 
 /*===================================*/
 
@@ -167,10 +171,6 @@ h3 {
   height: 13.6rem;
   width: 100%;
   background: var(--White);
-}
-
-.header__container {
-  width: 100%;
 }
 
 .header__logo {
@@ -210,11 +210,62 @@ h3 {
   background: var(--White);
 }
 
-main {
+/*===================================*/
+
+.home {
+  margin-top: 13.6rem;
+  height: 53.6rem;
   background: var(--Red);
 }
 
-@media (max-width: 1200px) {
+.home__container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.home .heading {
+  color: var(--White);
+  line-height: 2.6rem;
+}
+
+.home .title {
+  margin: .6rem 0 3.1rem 0;
+  max-width: 63rem;
+  color: var(--White);
+}
+
+.home .btn {
+  padding: 1.5rem 9.7rem;
+  color: var(--Grey);
+  border-radius: 1rem;
+  background: var(--White);
+  box-shadow: 2px 2px 4px 0px #A1303C;
+}
+
+.home .media img {
+  position: absolute;
+  bottom: -.3rem;
+  right: 0;
+}
+
+
+/*===================================*/
+/*===================================*/
+/*===================================*/
+/*===================================*/
+
+@media (max-width: 1400px) {
+  .header {
+    height: 10.8rem;
+  }
+
+  .header__logo svg {
+    width: 8.3rem;
+    height: 8.65rem;
+  }
+
   .header__main {
     gap: 5rem;
   }
@@ -226,15 +277,23 @@ main {
   .header .contact {
     gap: 3rem;
   }
+
+  .home {
+    margin-top: 10.8rem;
+  }
 }
 
 @media (max-width: 1024px) {
+  .title {
+    font-size: 3.6rem;
+  }
+
   .header__main {
     gap: 3rem;
   }
 
   .header .list {
-    gap: 2rem;
+    display: none;
   }
 
   .header .contact {
@@ -244,22 +303,48 @@ main {
   .header .contact__btn {
     padding: 1.2rem 3.5rem 1.5rem;
   }
+
+  .home {
+    height: 65.5rem;
+  }
+
+  .home__container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home .content {
+    margin-top: 3rem;
+  }
+
+  .home .heading {
+    font-size: 2rem;
+  }
+
+  .home .title {
+    max-width: 54rem;
+    line-height: 4.8rem;
+  }
+
+  .home .btn {
+    padding: 1.3rem 8.7rem;
+    border-radius: 2rem;
+  }
+
+  .home .media {
+    position: relative;
+    width: 55rem;
+    height: 100%;
+  }
+
+  .home .media img {
+    width: 100%;
+  }
 }
 
-@media (max-width: 920px) {
-  .header {
-    height: 11rem;
-  }
-
-  .header__logo svg {
-    width: 8.3rem;
-    height: 8.65rem;
-  }
-
-  .header .list {
-    display: none;
-  }
-}
+@media (max-width: 920px) {}
 
 @media (max-width: 768px) {
   .header {
@@ -283,11 +368,50 @@ main {
     width: 2rem;
     height: 2.7rem;
   }
+
+  .home {
+    margin-top: 8.8rem;
+  }
 }
 
 @media (max-width: 564px) {
+  .title {
+    font-size: 2.7rem;
+  }
+
   .header .contact__btn {
     display: none;
+  }
+
+  .home {
+    height: 45rem;
+  }
+
+  .home .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home .heading {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
+
+  .home .title {
+    max-width: 29.3rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+  }
+
+  .home .btn {
+    font-size: 1.8rem;
+    padding: 1rem 5rem;
+  }
+
+  .home .media {
+    width: 38rem;
   }
 }
 
@@ -316,5 +440,9 @@ main {
 
   .header .number__inner {
     font-size: 1.4rem;
+  }
+
+  .home {
+    margin-top: 5.8rem;
   }
 }
